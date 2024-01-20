@@ -1,0 +1,14 @@
+version: '3.9'
+services: 
+   scanner:
+    container_name: ezhov_scanner
+    build: .
+    ports:
+     - '3000:3000'
+    volumes: 
+     - './src:/app'
+    working_dir: '/app'
+    command: './scanner.py'
+    restart: 'always'
+    stdin_open: true
+    tty: true
